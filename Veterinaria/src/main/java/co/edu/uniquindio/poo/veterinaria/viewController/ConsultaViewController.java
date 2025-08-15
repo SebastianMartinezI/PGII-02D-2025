@@ -43,8 +43,9 @@ public class ConsultaViewController {
 
     @FXML
     private TextField txtMascota;
+
     @FXML
-    private TextField getTxtDiagnostico;
+    private TextField txtTratamiento;
 
     @FXML
     private TextField txtVeterinario;
@@ -82,6 +83,8 @@ public class ConsultaViewController {
 
     @FXML
     private TableColumn<Consulta, String> tbcDiagnostico;
+    @FXML
+    private TableColumn<Consulta, String> tbcTratamiento;
 
     @FXML
     void onAgregarConsulta() {
@@ -110,6 +113,8 @@ public class ConsultaViewController {
         tbcVeterinario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVeterinario()));
         tbcMotivo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMotivoConsulta()));
         tbcDiagnostico.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDiagnostico()));
+        tbcTratamiento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTratamiento()));
+
 
     }
 
@@ -132,6 +137,8 @@ public class ConsultaViewController {
             txtVeterinario.setText(consulta.getVeterinario());
             txtMotivo.setText(consulta.getMotivoConsulta());
             txtDiagnostico.setText(consulta.getDiagnostico());
+            txtTratamiento.setText(consulta.getTratamiento());
+
         }
     }
 
@@ -144,7 +151,7 @@ public class ConsultaViewController {
     }
 
     private Consulta buildConsulta() {
-        Consulta consulta = new Consulta(txtFecha.getText(), txtHora.getText(), txtMascota.getText(), txtVeterinario.getText(),txtMotivo.getText(),txtDiagnostico.getText());
+        Consulta consulta = new Consulta(txtFecha.getText(), txtHora.getText(), txtMascota.getText(), txtVeterinario.getText(),txtMotivo.getText(),txtDiagnostico.getText(), txtTratamiento.getText());
         return consulta;
     }
 
@@ -155,6 +162,7 @@ public class ConsultaViewController {
         txtVeterinario.clear();
         txtMotivo.clear();
         txtDiagnostico.clear();
+        txtTratamiento.clear();
     }
 
     public void setApp(App app) {

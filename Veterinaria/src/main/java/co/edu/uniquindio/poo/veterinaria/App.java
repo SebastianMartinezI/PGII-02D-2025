@@ -124,7 +124,7 @@ public class App extends Application {
         Veterinario veterinario = new Veterinario("Juan", "1111", "30202222", "7 de Agosto", "1234", "Roedores");
         veterinaria.agregarVeterinario(veterinario);
 
-        Consulta consulta = new Consulta("Abril", "11:11", "Lula", "Juan", "Dolor", "Reservado");
+        Consulta consulta = new Consulta("Abril", "11:11", "Lula", "Juan", "Dolor", "Reservado", "Acetaminofén");
         veterinaria.agregarConsulta(consulta);
     }
 }
