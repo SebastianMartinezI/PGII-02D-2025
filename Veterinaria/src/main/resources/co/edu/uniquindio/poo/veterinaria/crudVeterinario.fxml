@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.veterinaria.viewController.VeterinarioViewController">
+    <children>
+        <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="566.0" prefWidth="429.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="427.0">
+                    <children>
+                        <Pane layoutX="33.0" layoutY="14.0" prefHeight="313.0" prefWidth="360.0" style="-fx-border-image-width: 1px;">
+                            <effect>
+                                <Blend />
+                            </effect>
+                            <children>
+                                <Label layoutX="118.0" layoutY="14.0" text="Gestión Veterinarios">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="36.0" layoutY="58.0" prefHeight="27.0" prefWidth="80.0" text="Nombre:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="13.0" layoutY="92.0" prefHeight="27.0" prefWidth="138.0" text="Identificacion:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="31.0" layoutY="124.0" prefHeight="27.0" prefWidth="80.0" text="Teléfono:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="32.0" layoutY="160.0" text="Dirección:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="11.0" layoutY="194.0" prefHeight="27.0" prefWidth="106.0" text="Lic. Profesional:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="13.0" layoutY="228.0" text="Especialidad:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtNombre" layoutX="126.0" layoutY="59.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtIdentificacion" layoutX="126.0" layoutY="93.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtTelefono" layoutX="126.0" layoutY="127.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtDireccion" layoutX="126.0" layoutY="161.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtLicenciaProfesional" layoutX="126.0" layoutY="195.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtEspecialidad" layoutX="126.0" layoutY="229.0" prefHeight="25.0" prefWidth="194.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="427.0">
+                    <children>
+                        <TableView fx:id="tblListVeterinarios" layoutX="1.0" layoutY="38.0" prefHeight="175.0" prefWidth="418.0">
+                            <columns>
+                                <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="Nombre" />
+                                <TableColumn fx:id="tbcIdentificacion" prefWidth="75.0" text="Identificacion" />
+                                <TableColumn fx:id="tbcTelefono" prefWidth="75.0" text="Telefono" />
+                                <TableColumn fx:id="tbcDireccion" prefWidth="75.0" text="Direccion" />
+                                <TableColumn fx:id="tbcLicenciaProfesional" prefWidth="75.0" text="Lic.Profesional" />
+                                <TableColumn fx:id="tbcEspecialidad" prefWidth="75.0" text="Especi..." />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="btnLimpiar" layoutX="93.0" layoutY="223.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                        <Button fx:id="btnEliminar" layoutX="234.0" layoutY="223.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                        <Button fx:id="btbAgregarVeterinario" layoutX="91.0" layoutY="9.0" mnemonicParsing="false" onAction="#onAgregarVeterinario" text="Agregar veterinario" />
+
+
+                        <Button fx:id="btnActualizarVeterinario" layoutX="254.0" layoutY="9.0" mnemonicParsing="false" onAction="#onActualizarVeterinario" text="Actualizar veterinario" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

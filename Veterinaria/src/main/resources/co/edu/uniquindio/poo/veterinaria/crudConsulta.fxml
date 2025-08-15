@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.veterinaria.viewController.ConsultaViewController">
+    <SplitPane dividerPositions="0.45" orientation="VERTICAL" prefHeight="700.0" prefWidth="600.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="598.0">
+            <Pane layoutX="20.0" layoutY="14.0" prefHeight="300.0" prefWidth="560.0" style="-fx-border-image-width: 1px;">
+                <effect>
+                    <Blend />
+                </effect>
+                <Label layoutX="180.0" layoutY="14.0" text="Gestión de Consultas">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="36.0" layoutY="50.0" text="Fecha:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtFecha" layoutX="140.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" promptText="DD/MM/AAAA" />
+                <Label layoutX="360.0" layoutY="50.0" text="Hora:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtHora" layoutX="420.0" layoutY="50.0" prefHeight="25.0" prefWidth="120.0" promptText="HH:MM" />
+
+                <Label layoutX="36.0" layoutY="90.0" text="Mascota ID/Nombre:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtMascota" layoutX="190.0" layoutY="90.0" prefHeight="25.0" prefWidth="350.0" promptText="ID o Nombre de la Mascota" />
+
+                <Label layoutX="36.0" layoutY="130.0" text="Veterinario ID/Nombre:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtVeterinario" layoutX="210.0" layoutY="130.0" prefHeight="25.0" prefWidth="330.0" promptText="ID o Nombre del Veterinario" />
+
+                <Label layoutX="36.0" layoutY="170.0" text="Motivo de Consulta:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtMotivo" layoutX="190.0" layoutY="170.0" prefHeight="25.0" prefWidth="350.0" />
+
+                <Label layoutX="36.0" layoutY="210.0" text="Diagnóstico:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtDiagnostico" layoutX="140.0" layoutY="210.0" prefHeight="25.0" prefWidth="400.0" />
+
+                <!-- Botones de Acción para la parte superior -->
+                <Button fx:id="btnAgregarConsulta" layoutX="195.0" layoutY="256.0" mnemonicParsing="false" onAction="#onAgregarConsulta" prefHeight="30.0" prefWidth="150.0" text="Agregar Consulta" />
+            </Pane>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="598.0">
+            <TableView fx:id="tblListConsultas" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="580.0">
+                <columns>
+                    <TableColumn fx:id="tbcFecha" text="Fecha" />
+                    <TableColumn fx:id="tbcHora" prefWidth="60.0" text="Hora" />
+                    <TableColumn fx:id="tbcMascota" prefWidth="100.0" text="Mascota" />
+                    <TableColumn fx:id="tbcVeterinario" prefWidth="100.0" text="Veterinario" />
+                    <TableColumn fx:id="tbcMotivo" prefWidth="100.0" text="Motivo Consulta" />
+                    <TableColumn fx:id="tbcDiagnostico" prefWidth="100.0" text="Diagnóstico" />
+
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>

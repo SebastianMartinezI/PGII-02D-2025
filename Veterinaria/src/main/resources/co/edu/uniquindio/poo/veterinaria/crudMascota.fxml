@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.veterinaria.viewController.MascotaViewController">
+    <children>
+        <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="566.0" prefWidth="429.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="401.0">
+                    <children>
+                        <Pane layoutX="34.0" layoutY="20.0" prefHeight="249.0" prefWidth="360.0" style="-fx-border-image-width: 1px;">
+                            <effect>
+                                <Blend />
+                            </effect>
+                            <children>
+                                <Label layoutX="108.0" layoutY="8.0" text="Gestión Mascotas">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="37.0" layoutY="45.0" prefHeight="27.0" prefWidth="70.0" text="Nombre:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="80.0" text="Especie:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="112.0" text="Raza:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="142.0" text="Edad:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="8.0" layoutY="169.0" prefHeight="27.0" prefWidth="115.0" text="Identificación:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="18.0" layoutY="196.0" prefHeight="27.0" prefWidth="107.0" text="Propietario:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtNombre" layoutX="126.0" layoutY="46.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtEspecie" layoutX="126.0" layoutY="81.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtRaza" layoutX="126.0" layoutY="113.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtEdad" layoutX="126.0" layoutY="170.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtIdentificacionVeterinaria" layoutX="126.0" layoutY="143.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtPropietario" layoutX="126.0" layoutY="197.0" prefHeight="25.0" prefWidth="194.0" />
+                            </children>
+                        </Pane>
+                        <Button fx:id="btnActualizarMascota" layoutX="253.0" layoutY="258.0" mnemonicParsing="false" onAction="#onActualizarMascota" text="Actualizar mascota" />
+                        <Button fx:id="btbAgregarMascota" layoutX="42.0" layoutY="260.0" mnemonicParsing="false" onAction="#onAgregarMascota" text="Agregar mascota" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="645.0">
+                    <children>
+                        <TableView fx:id="tblListMascota" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="412.0">
+                            <columns>
+                                <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="Nombre" />
+                                <TableColumn fx:id="tbcEspecie" prefWidth="75.0" text="Especie" />
+                                <TableColumn fx:id="tbcRaza" prefWidth="75.0" text="Raza" />
+                                <TableColumn fx:id="tbcEdad" prefWidth="75.0" text="Edad" />
+                                <TableColumn fx:id="tbcIdentificacionVeterinaria" prefWidth="75.0" text="Id.Veter.." />
+                                <TableColumn fx:id="tbcPropietario" prefWidth="75.0" text="Propi.." />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="btnLimpiar" layoutX="93.0" layoutY="223.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                        <Button fx:id="btnEliminar" layoutX="234.0" layoutY="223.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
