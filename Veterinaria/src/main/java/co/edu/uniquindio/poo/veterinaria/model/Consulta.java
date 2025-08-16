@@ -9,7 +9,19 @@ public class Consulta {
     private String diagnostico;
     private String tratamiento;
 
-    public Consulta(String fecha, String hora, String mascota, String veterinario, String motivoConsulta, String diagnostico, String tratamiento) {
+    /**
+     * Construye una nueva consulta con los datos especificados.
+     *
+     * @param fecha          fecha en la que se realiza la consulta
+     * @param hora           hora en la que se realiza la consulta
+     * @param mascota        nombre o identificación de la mascota atendida
+     * @param veterinario    nombre del veterinario que atiende la consulta
+     * @param motivoConsulta motivo por el cual se realiza la consulta
+     * @param diagnostico    diagnóstico realizado por el veterinario
+     * @param tratamiento    tratamiento recomendado para la mascota
+     */
+    public Consulta(String fecha, String hora, String mascota, String veterinario,
+                    String motivoConsulta, String diagnostico, String tratamiento) {
         this.fecha = fecha;
         this.hora = hora;
         this.mascota = mascota;
@@ -17,14 +29,15 @@ public class Consulta {
         this.motivoConsulta = motivoConsulta;
         this.diagnostico = diagnostico;
         this.tratamiento = tratamiento;
-
     }
+
     public String getFecha() {
         return fecha;
     }
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
     public String getMascota() {
         return mascota;
     }
@@ -35,23 +48,20 @@ public class Consulta {
     public String getHora() {
         return hora;
     }
-
     public void setHora(String hora) {
         this.hora = hora;
     }
 
     public String getTratamiento() {
-      return tratamiento;
+        return tratamiento;
     }
-
     public void setTratamiento(String tratamiento) {
-     this.tratamiento = tratamiento;
+        this.tratamiento = tratamiento;
     }
 
     public String getDiagnostico() {
         return diagnostico;
     }
-
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
     }
@@ -59,7 +69,6 @@ public class Consulta {
     public String getMotivoConsulta() {
         return motivoConsulta;
     }
-
     public void setMotivoConsulta(String motivoConsulta) {
         this.motivoConsulta = motivoConsulta;
     }
@@ -67,11 +76,16 @@ public class Consulta {
     public String getVeterinario() {
         return veterinario;
     }
-
     public void setVeterinario(String veterinario) {
         this.veterinario = veterinario;
     }
 
+    /**
+     * Retorna una representación en cadena del objeto Consulta,
+     * mostrando sus principales atributos excepto el tratamiento.
+     *
+     * @return una cadena de texto con los datos de la consulta
+     */
     @Override
     public String toString() {
         return "Consulta{" +
