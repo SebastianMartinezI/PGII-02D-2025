@@ -1,24 +1,32 @@
 package co.edu.uniquindio.poo.cafeteria.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecomendacionPorHistorial implements EstrategiaRecomendacion {
 
-    private String recomendacion;
-
     @Override
-    public boolean generarRecomendacion(Cliente cliente, List<Producto> productos) {
-        // Ejemplo: recomendar en base a compras anteriores
-        if (cliente.getHistorialPedidos().contains("Café")) {
-            recomendacion = "Como disfrutas del café, prueba nuestra nueva línea de cafés especiales.";
-            return true;
+    public List<Producto> generarRecomendaciones(Cliente cliente, List<Producto> productosDisponibles) {
+        List<Producto> recomendados = new ArrayList<>();
+
+        for (Producto historial : cliente.getHistorialCompras()) {
+            for (Producto disponible : productosDisponibles) {
+                if (disponible.getCategoria().equals(historial.getCategoria()) && !recomendados.contains(disponible)) {
+                    recomendados.add(disponible);
+                }
+            }
         }
-        recomendacion = "Explora nuestros productos más populares para ti.";
-        return true;
+
+        return recomendados;
     }
 
     @Override
-    public String getRecomendacion() {
-        return recomendacion;
+    public String getNombreEstrategia() {
+        return "Recomendación por historial";
+    }
+
+    @Override
+    public int getPrioridad() {
+        return 5; // más alto, porque es personalizado
     }
 }

@@ -1,39 +1,43 @@
 package co.edu.uniquindio.poo.cafeteria.model;
 
+import java.util.Map;
+
+/**
+ * Estrategia de descuento basada en el tipo de cliente.
+ * Aplica diferentes tasas de descuento según si el cliente es
+ * Estudiante, Docente o Visitante.
+ */
 public class DescuentoTipoCliente implements EstrategiaDescuento {
 
-    private Cliente cliente;
+    private final Map<String, Double> tasasDescuento;
 
     /**
-     * Constructor que recibe un cliente específico
-     * (Estudiante, Docente o Visitante).
+     * Constructor que inicializa las tasas de descuento por tipo de cliente.
      */
-    public DescuentoTipoCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public DescuentoTipoCliente() {
+        tasasDescuento = Map.of(
+                "Estudiante", 0.15, // 15% de descuento
+                "Docente", 0.10,    // 10% de descuento
+                "Visitante", 0.0    // Sin descuento
+        );
     }
 
     @Override
-    public double calcularDescuento(double total) {
-        if (cliente instanceof Estudiante) {
-            return total * 0.10; // 10% para estudiantes
-        } else if (cliente instanceof Docente) {
-            return total * 0.15; // 15% para docentes
-        } else if (cliente instanceof Visitante) {
-            return total * 0.05; // 5% para visitantes
-        }
-        return 0; // sin descuento si no es un tipo conocido
+    public double calcularDescuento(Pedido pedido) {
+        String tipoCliente = pedido.getCliente().getTipoCliente();
+        double tasaDescuento = tasasDescuento.getOrDefault(tipoCliente, 0.0);
+        return pedido.getSubtotal() * tasaDescuento;
     }
 
     @Override
-    public String descripcionDescuento() {
-        if (cliente instanceof Estudiante) {
-            return "Descuento del 10% para estudiantes";
-        } else if (cliente instanceof Docente) {
-            return "Descuento del 15% para docentes";
-        } else if (cliente instanceof Visitante) {
-            return "Descuento del 5% para visitantes";
-        }
-        return "Sin descuento disponible";
+    public String getDescripcionDescuento() {
+        return "Descuento aplicado según el tipo de cliente (Estudiante, Docente o Visitante).";
+    }
+
+    @Override
+    public String getTipoDescuento() {
+        return "DESCUENTO_TIPO_CLIENTE";
     }
 }
+
 

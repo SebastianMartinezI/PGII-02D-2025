@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.cafeteria.viewController.PedidoViewController"
+            prefWidth="700" prefHeight="450">
+    <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+          AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+
+        <TableView fx:id="tablePedidos" prefHeight="250" prefWidth="680">
+            <columns>
+                <TableColumn fx:id="colCliente" text="Cliente"/>
+                <TableColumn fx:id="colProductos" text="Productos"/>
+                <TableColumn fx:id="colTotal" text="Total"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10">
+            <ComboBox fx:id="cmbCliente" promptText="Cliente"/>
+            <ComboBox fx:id="cmbProducto" promptText="Producto"/>
+            <TextField fx:id="txtCantidad" promptText="Cantidad"/>
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#agregarPedido"/>
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#eliminarPedido"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

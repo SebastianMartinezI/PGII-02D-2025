@@ -1,25 +1,30 @@
 package co.edu.uniquindio.poo.cafeteria.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecomendacionPorTendencia implements EstrategiaRecomendacion {
 
-    private String recomendacion;
-
     @Override
-    public boolean generarRecomendacion(Cliente cliente, List<Producto> productos) {
-        // Ejemplo: recomendar productos en tendencia
-        if (!productos.isEmpty()) {
-            Producto masVendido = productos.get(0); // Supongamos que ya está ordenado por ventas
-            recomendacion = "El producto en tendencia es: " + masVendido.getNombre() + ". ¡No te lo pierdas!";
-            return true;
+    public List<Producto> generarRecomendaciones(Cliente cliente, List<Producto> productosDisponibles) {
+        List<Producto> recomendados = new ArrayList<>();
+
+        if (!productosDisponibles.isEmpty()) {
+            // Supongamos que productosDisponibles ya está ordenada por ventas descendentes
+            Producto masVendido = productosDisponibles.get(0);
+            recomendados.add(masVendido);
         }
-        recomendacion = "No hay productos en tendencia por el momento.";
-        return false;
+
+        return recomendados;
     }
 
     @Override
-    public String getRecomendacion() {
-        return recomendacion;
+    public String getNombreEstrategia() {
+        return "Recomendación por tendencia";
+    }
+
+    @Override
+    public int getPrioridad() {
+        return 2; // Prioridad media
     }
 }

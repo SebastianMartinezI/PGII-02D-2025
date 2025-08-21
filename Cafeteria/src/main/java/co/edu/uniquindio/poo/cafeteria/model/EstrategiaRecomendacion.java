@@ -3,21 +3,25 @@ package co.edu.uniquindio.poo.cafeteria.model;
 import java.util.List;
 
 public interface EstrategiaRecomendacion {
+    /**
+     * Genera una lista de productos recomendados según el cliente y los productos disponibles.
+     *
+     * @param cliente cliente al cual se le van a recomendar productos
+     * @param productosDisponibles lista de productos de la cafetería
+     * @return lista de productos recomendados
+     */
+    List<Producto> generarRecomendaciones(Cliente cliente, List<Producto> productosDisponibles);
 
     /**
-     * Genera una recomendación personalizada según la estrategia aplicada.
-     *
-     * @param cliente   el cliente al que se le hará la recomendación
-     * @param productos lista de productos disponibles
-     * @return true si se generó una recomendación, false en caso contrario
+     * Obtiene el nombre de la estrategia.
+     * @return nombre de la estrategia
      */
-    boolean generarRecomendacion(Cliente cliente, List<Producto> productos);
+    String getNombreEstrategia();
 
     /**
-     * Devuelve la recomendación generada por la estrategia.
-     *
-     * @return recomendación como texto
+     * Obtiene la prioridad de la estrategia (un valor más alto significa mayor prioridad).
+     * @return prioridad
      */
-    String getRecomendacion();
+    int getPrioridad();
 }
 
